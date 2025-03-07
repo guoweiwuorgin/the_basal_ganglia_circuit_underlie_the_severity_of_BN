@@ -1,0 +1,2 @@
+# the_basal_ganglia_circuit_underlie_the_severity_of_BN
+Replication_the basal ganglia circuit underlie the severity of bulimia nervosa
