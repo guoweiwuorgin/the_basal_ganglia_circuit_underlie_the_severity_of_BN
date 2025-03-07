@@ -1,7 +1,7 @@
 #!/bin/bash
 #User inputs:
-bids_root_dir=/GPFS/cuizaixu_lab_temp/wuguowei/yuan/bids
-bids_root_dir_output_wd4singularity=/GPFS/cuizaixu_lab_temp/wuguowei/yuan/WD
+bids_root_dir=/mnt/BN_bidsdata
+bids_root_dir_output_wd4singularity=/mnt/BN_bidsdata_WK
 subj=$1
 nthreads=8
 
@@ -32,8 +32,8 @@ unset PYTHONPATH; singularity run --cleanenv \
     -B $bids_root_dir/derivatives/qsiprep/sub-${subj}:/output/ \
     -B $bids_root_dir/derivatives/qsiprep:/prepResults/ \
     -B $bids_root_dir_output_wd4singularity/derivatives/qsiprep/sub-${subj}:/WD/ \
-    -B /GPFS/cuizaixu_lab_temp/wuguowei/code:/freesurfer_license/ \
-    /GPFS/cuizaixu_lab_permanent/wuguowei/app_packages/qsiprep.sif \
+    -B /mnt/wuguowei/code:/freesurfer_license/ \
+    /mnt/wuguowei/app_packages/qsiprep.sif \
     /data /output \
     participant \
     --participant_label ${subj} \
